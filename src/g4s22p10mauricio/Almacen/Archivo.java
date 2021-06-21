@@ -35,14 +35,15 @@ public class Archivo {
     }
     public List<Datos> leer (){
         List<Datos> Listadatos = new ArrayList<>();
-        Datos datos = new Datos();
+        Datos datos;
         String cadena="";
         try{
             FileReader archivo = new FileReader("datos.txt");
             BufferedReader br = new BufferedReader(archivo);
-            while ((cadena = br readLine()) != null){
+            while ((cadena = br .readLine()) != null){
+            datos = new Datos();
             datos.setNombre(cadena);
-            cadena = br . readLine();
+            cadena = br .readLine();
             datos.setEdad(Integer.parseInt(cadena));
             Listadatos.add(datos);
             
